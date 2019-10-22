@@ -5,7 +5,7 @@ class Resolvers::LinksSearch
   include SearchObject.module(:graphql)
 
   # scope is starting point for search
-  scope { Link.all }
+  scope { Link.all.order(id: :desc) }
 
   type types[Types::LinkType]
 

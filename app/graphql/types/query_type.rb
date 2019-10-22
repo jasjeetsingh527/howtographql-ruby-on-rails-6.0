@@ -4,7 +4,7 @@ module Types
 
     # this method is invoked, when `all_link` fields is being resolved
     def all_links
-      Link.all
+      Link.all.order(id: :desc)
     end
   end
 end
