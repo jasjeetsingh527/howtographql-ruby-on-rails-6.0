@@ -1,5 +1,6 @@
 require 'mina/rails'
 require 'mina/git'
+require 'mina/rvm'
 # require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (https://rvm.io)
 
@@ -34,7 +35,7 @@ task :remote_environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use', 'ruby-2.6.1@default'
+  invoke :'rvm:use', 'ruby-2.6.1@default'
 end
 
 # Put any custom commands you need to run at setup
