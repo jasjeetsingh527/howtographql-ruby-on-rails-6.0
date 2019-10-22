@@ -12,7 +12,7 @@ require 'mina/git'
 set :application_name, 'test app'
 set :domain, '192.168.1.72'
 set :deploy_to, '/var/www/html/mina-deploy'
-set :repository, 'https://github.com/jasjeetsingh527/howtographql-ruby-on-rails-6.0.git'
+set :repository, 'git@github.com:jasjeetsingh527/howtographql-ruby-on-rails-6.0.git'
 set :branch, 'master'
 
 # Optional settings:
@@ -34,7 +34,7 @@ task :remote_environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
+  # invoke :'rvm:use', 'ruby-2.6.1@default'
 end
 
 # Put any custom commands you need to run at setup
@@ -52,7 +52,7 @@ task :deploy do
     # instance of your project.
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
-    invoke :'bundle:install'
+    # invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
